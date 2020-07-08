@@ -1,10 +1,10 @@
 import '../styles/app.scss';
-import ButtonAppBar from '../components/ButtonAppBar.js';
+import Base from '../components/Base/Base.js';
 
 export default function App({Component, pageProps}){
     return (
         <div>
-            <ButtonAppBar />
+            <Base piyo='piyo' />
             <Component {...pageProps} />
         </div>
     );

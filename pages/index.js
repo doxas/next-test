@@ -1,15 +1,16 @@
-import Link from 'next/link'
-
-import Button from '@material-ui/core/Button';
+import Head from 'next/head';
+import Link from 'next/link';
 
 function HomePage(){
     return (
         <div>
+            <Head>
+                <title>index</title>
+            </Head>
             <div>Welcome to <span>Next.js</span>!</div>
             <Link href="./about">
                 <a>ABOUT</a>
             </Link>
-            <Button variant="contained" color="primary">Hello World</Button>
             <style jsx>{`span {color: red;}`}</style>
         </div>
     );
