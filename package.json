@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next -p 9090",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -19,15 +21,19 @@
   },
   "homepage": "https://github.com/doxas/next-test#readme",
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/styles": "^4.10.0",
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@zeit/next-sass": "^1.0.1",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^26.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.1.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5"
