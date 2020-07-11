@@ -1,11 +1,7 @@
-import '../styles/app.scss';
-import Base from '../components/Base/Base.js';
+import css from '../styles/app.scss';
 
 export default function App({Component, pageProps}){
     return (
-        <div>
-            <Base piyo='piyo' />
-            <Component {...pageProps} />
-        </div>
+        <Component {...pageProps} />
     );
 }

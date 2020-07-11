@@ -1,19 +1,23 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-function HomePage(){
+import css from '../styles/index.scss';
+
+function Index(){
     return (
-        <div>
+        <div className={css.indexwrap}>
             <Head>
-                <title>index</title>
+                <title>top</title>
+                <script src="./vendor/script.js"></script>
             </Head>
-            <div>Welcome to <span>Next.js</span>!</div>
-            <Link href="./about">
-                <a>ABOUT</a>
-            </Link>
-            <style jsx>{`span {color: red;}`}</style>
+            <div className={css.webglwrap}>
+                <canvas className={css.webglcanvas}></canvas>
+            </div>
+            <div className={css.interfacewrap}>
+                interfaces.
+            </div>
         </div>
     );
 }
 
-export default HomePage;
+export default Index;
