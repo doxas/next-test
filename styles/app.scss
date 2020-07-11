@@ -1,3 +1,4 @@
+@import './_static.scss';
 
 * {
     margin: 0;
@@ -6,10 +7,15 @@
 }
 
 html, body {
+    @include fullrect();
     background-color: whitesmoke;
     color: #333;
-    width: 100%;
-    height: 100%;
+    overflow: hidden;
+}
+
+body > div:first-child {
+    @include fullrect();
+    position: relative;
     overflow: hidden;
 }
 

@@ -1,0 +1,12 @@
+
+@mixin flex($direction:row, $justify:flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+@mixin fullrect() {
+    width: 100%;
+    height: 100%;
+}
+

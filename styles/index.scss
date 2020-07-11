@@ -1,0 +1,24 @@
+@import './_static.scss';
+
+.indexwrap {
+    @include fullrect();
+    position: relative;
+}
+
+.webglwrap {
+    @include fullrect();
+    overflow: hidden;
+    position: absolute;
+
+    .webglcanvas {
+        @include fullrect();
+    }
+}
+
+.interfacewrap {
+    @include fullrect();
+    overflow: hidden;
+    position: absolute;
+}
+
+
