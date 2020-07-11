@@ -1,26 +1,15 @@
 @import './_static.scss';
 
-.indexwrap {
+.wrap {
     @include fullrect();
     position: relative;
-}
 
-.webglwrap {
-    @include fullrect();
-    overflow: hidden;
-    position: absolute;
-
-    .webglcanvas {
+    .interfacewrap {
+        @include flex(column, flex-end);
         @include fullrect();
+        overflow: hidden;
+        position: absolute;
+        pointer-events: none;
     }
 }
-
-.interfacewrap {
-    @include flex(column, flex-end);
-    @include fullrect();
-    overflow: hidden;
-    position: absolute;
-    pointer-events: none;
-}
-
 

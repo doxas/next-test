@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import css from './UserMenu.scss';
 
 export default function UserMenu(props){
@@ -22,6 +22,7 @@ export default function UserMenu(props){
             }}
             onPointerEnter={pointerEnter}
             onPointerLeave={pointerLeave}
+            onClick={props.onClick}
         >
             usermenu component
         </div>
