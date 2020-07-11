@@ -1,0 +1,9 @@
+
+.wrap {
+    margin: auto 0px 0px;
+    width: 100%;
+    pointer-events: auto;
+    opacity: 0.0;
+    transition: opacity 0.5s ease, min-height 0.5s ease;
+}
+
