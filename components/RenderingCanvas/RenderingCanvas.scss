@@ -1,0 +1,12 @@
+@import '../../styles/_static.scss';
+
+.wrap {
+    @include fullrect();
+    overflow: hidden;
+    position: absolute;
+
+    .webglcanvas {
+        @include fullrect();
+    }
+}
+

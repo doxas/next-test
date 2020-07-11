@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import EventEmitter3 from 'eventemitter3';
 
 import css from '../styles/index.scss';
 import UserMenu from '../components/UserMenu/UserMenu.js';
@@ -16,10 +17,10 @@ const DinamicRenderingCanvasNoSSR = dynamic(() => {
 });
 
 export default function Index(props){
-    const [color, setColor] = useState('red');
+    const emitter = new EventEmitter3();
+
     const onClick = () => {
-        console.log(color, setColor);
-        setColor('blue');
+        emitter.emit('click');
     };
 
     return (
@@ -27,7 +28,7 @@ export default function Index(props){
             <Head>
                 <title>top page</title>
             </Head>
-            <DinamicRenderingCanvasNoSSR color={color} />
+            <DinamicRenderingCanvasNoSSR emitter={emitter} />
             <div className={css.interfacewrap}>
                 interfaces.
                 <UserMenu
