@@ -16,9 +16,19 @@
 }
 
 .interfacewrap {
+    @include flex(column, flex-end);
     @include fullrect();
     overflow: hidden;
     position: absolute;
+    pointer-events: none;
+
+    .interfacefooter {
+        background-color: red;
+        margin: 100% 0px 0px;
+        width: 100%;
+        min-height: 100px;
+        pointer-events: auto;
+    }
 }
 
 

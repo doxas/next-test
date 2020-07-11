@@ -4,6 +4,17 @@ import Link from 'next/link';
 import css from '../styles/index.scss';
 
 function Index(){
+    let isEnter = false;
+
+    const pointerEnter = (evt) => {
+        isEnter = true;
+        console.log(evt.pageX);
+    };
+    const pointerLeave = (evt) => {
+        isEnter = false;
+        console.log(evt.pageX);
+    };
+
     return (
         <div className={css.indexwrap}>
             <Head>
@@ -15,6 +26,12 @@ function Index(){
             </div>
             <div className={css.interfacewrap}>
                 interfaces.
+                <div
+                    className={css.interfacefooter}
+                    onPointerEnter={pointerEnter}
+                    onPointerLeave={pointerLeave}
+                >
+                </div>
             </div>
         </div>
     );
