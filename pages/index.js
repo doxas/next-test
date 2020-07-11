@@ -1,20 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+import UserMenu from '../components/UserMenu/UserMenu.js';
 import css from '../styles/index.scss';
 
-function Index(){
-    let isEnter = false;
-
-    const pointerEnter = (evt) => {
-        isEnter = true;
-        console.log(evt.pageX);
-    };
-    const pointerLeave = (evt) => {
-        isEnter = false;
-        console.log(evt.pageX);
-    };
-
+export default function Index(){
     return (
         <div className={css.indexwrap}>
             <Head>
@@ -26,15 +16,12 @@ function Index(){
             </div>
             <div className={css.interfacewrap}>
                 interfaces.
-                <div
-                    className={css.interfacefooter}
-                    onPointerEnter={pointerEnter}
-                    onPointerLeave={pointerLeave}
-                >
-                </div>
+                <UserMenu
+                    height="100px"
+                    enterHeight="200px"
+                />
             </div>
         </div>
     );
 }
 
-export default Index;
