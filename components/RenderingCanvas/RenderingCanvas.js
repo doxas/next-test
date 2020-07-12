@@ -15,9 +15,9 @@ export default function RenderingCanvas(props){
         // return webgl.dispose();
     }, []);
 
-    props.emitter.on('click', () => {
-        console.log('click!');
-        webgl.render('blue');
+    props.emitter.on('changecolor', (arg) => {
+        console.log('🍎', arg);
+        webgl.render(arg);
     });
 
     return (

@@ -1,7 +1,10 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import css from './UserMenu.scss';
+import {IndexContext} from '../../pages/index.js';
 
 export default function UserMenu(props){
+    const {color, setColor} = useContext(IndexContext);
+
     const [isEnter, onEnter] = useState(false);
 
     const pointerEnter = (evt) => {
@@ -11,6 +14,10 @@ export default function UserMenu(props){
     const pointerLeave = (evt) => {
         onEnter(false);
         console.log(evt.pageX);
+    };
+    const click = () => {
+        console.log(`[${color}] to blue`);
+        setColor('blue');
     };
 
     return (
@@ -22,7 +29,7 @@ export default function UserMenu(props){
             }}
             onPointerEnter={pointerEnter}
             onPointerLeave={pointerLeave}
-            onClick={props.onClick}
+            onClick={click}
         >
             usermenu component
         </div>
