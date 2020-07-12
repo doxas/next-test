@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useCallback, createContext} from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import EventEmitter3 from 'eventemitter3';
@@ -16,27 +16,44 @@ const DinamicRenderingCanvasNoSSR = dynamic(() => {
     ssr: false
 });
 
+const INDEX_CONTEXT = {
+    color: 'red',
+    setColor: () => {},
+};
+
+export const IndexContext = createContext(INDEX_CONTEXT);
+
 export default function Index(props){
     const emitter = new EventEmitter3();
 
-    const onClick = () => {
-        emitter.emit('click');
-    };
+    // color という名前のローカルステートを定義
+    const [color, setColorState] = useState(INDEX_CONTEXT.color);
+    // setColor というコールバックを定義
+    const setColor = useCallback((colorValue) => {
+        // コールバックに渡された色が既存のステートと異なる場合 emit
+        if(color !== colorValue){
+            emitter.emit('changecolor', colorValue);
+        }
+        // ステートを更新
+        setColorState(colorValue);
+    }, [emitter, color, setColorState]);
+    const indexProviderValue = {color, setColor};
 
     return (
         <div className={css.wrap}>
             <Head>
                 <title>top page</title>
             </Head>
-            <DinamicRenderingCanvasNoSSR emitter={emitter} />
-            <div className={css.interfacewrap}>
-                interfaces.
-                <UserMenu
-                    height="100px"
-                    enterHeight="200px"
-                    onClick={onClick}
-                />
-            </div>
+            <IndexContext.Provider value={indexProviderValue}>
+                <DinamicRenderingCanvasNoSSR emitter={emitter} />
+                <div className={css.interfacewrap}>
+                    interfaces.
+                    <UserMenu
+                        height="100px"
+                        enterHeight="200px"
+                    />
+                </div>
+            </IndexContext.Provider>
         </div>
     );
 }
