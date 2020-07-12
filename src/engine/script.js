@@ -1,6 +1,6 @@
 
 export default class WebGLFrame {
-    constructor(){
+    constructor(canvas){
         window.addEventListener('keydown', (evt) => {
             switch(evt.key){
                 case 'Escape':
@@ -8,9 +8,7 @@ export default class WebGLFrame {
                     break;
             }
         }, false);
-    }
-    init(){
-        this.c = document.querySelector('canvas');
+        this.c = canvas;
         this.ctx = this.c.getContext('2d');
     }
     render(color){

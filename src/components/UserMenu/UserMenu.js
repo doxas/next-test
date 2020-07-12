@@ -1,7 +1,15 @@
+// react and next
 import {useState, useContext} from 'react';
-import css from './UserMenu.scss';
-import {AppContext} from '../../hooks/store.js';
 
+// store and hooks
+import {AppContext} from '../../store/store.js';
+
+// style
+import css from './UserMenu.scss';
+
+/**
+ * マウスカーソルのホバーで下から浮き上がってくるメニュー
+ */
 export default function UserMenu(props){
     const {color, setColor} = useContext(AppContext);
 
