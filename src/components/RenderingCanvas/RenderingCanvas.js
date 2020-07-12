@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 import css from './RenderingCanvas.scss';
-import WebGLFrame from '../../public/vendor/script.js';
+import WebGLFrame from '../../../public/vendor/script.js';
 
 export default function RenderingCanvas(props){
     let webgl;

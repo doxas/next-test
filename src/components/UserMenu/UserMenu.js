@@ -1,9 +1,9 @@
 import {useState, useContext} from 'react';
 import css from './UserMenu.scss';
-import {IndexContext} from '../../pages/index.js';
+import {AppContext} from '../../hooks/store.js';
 
 export default function UserMenu(props){
-    const {color, setColor} = useContext(IndexContext);
+    const {color, setColor} = useContext(AppContext);
 
     const [isEnter, onEnter] = useState(false);
 
